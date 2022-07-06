@@ -1,0 +1,336 @@
+ 2 - NAVEGAÇÃO VIA COMMAND LINE, INTERFACE E INSTALAÇÃO
+
+ 2.1 - NAVEGAÇÃO BÁSICA - COMANDOS BÁSICOS
+
+ - COMANDOS BÁSICOS (CMD):
+ -cd;
+ -dir;
+ -mkdir; e
+ -del / rmdir.
+
+
+ 2.1 - CMD
+  - Comando DIR(Win)/LS(Linux): Lista as pastas/diretórios no ambiente C;
+ - cd "C:\>cd Windows / C:\Windows>dir": trás, listado, todos os programas executáveis.
+ -  Comando CLS : Limpa o terminal do Windows
+ - Criar pasta: mkdir
+
+cd .. cls: sair
+
+ - Echo - criar um arquivo:
+"C:\>cd workspace
+
+C:\workspace>echo hello
+hello
+
+C:\workspace>echo hello > hello.txt
+
+C:\workspace>dir
+ O volume na unidade C é OS
+ O Número de Série do Volume é 80E9-EC76
+
+ Pasta de C:\workspace
+
+05/05/2022  08:22    <DIR>          .
+05/05/2022  08:22    <DIR>          ..
+05/05/2022  08:22                 8 hello.txt
+               1 arquivo(s)              8 bytes
+               2 pasta(s)   176.023.560.192 bytes disponíveis"
+
+ - DELETAR ARQUIVOS
+"C:\>del workspace
+C:\workspace\*, Tem certeza (S/N)? S"
+
+ - REMOVER PASTA:
+"C:\>rmdir workspace /S /Q"
+
+
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+ 2.2 - REALIZANDO A INSTALAÇÃO DO GIT
+
+████████████████████████████████████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████████████████████████████████████
+████████████████████████████████████████████████████████████████████████████████████████████████████████
+
+
+ 3 - ENTENDO COMO O GIT FUNCIONA
+
+ 3.1 - TÓPICOS FUNDAMENTAIS
+ 3.1.1 - SHA1 (Secure Hash Algorithm):
+ É um conjunto de funções hash criptográficas projetadas pela NSA(Agência de Segurança Nacional dos EUA).
+ A encriptação gera conjunto de caracteres identificador de 40 dígitos.
+ É uma forma curta de representar um arquivo.
+
+ - GUIT BASH
+
+ Criar chave e um documento:
+ openssl sha1 1.txt: 
+ Chave do documento : e1c98411ee47f610dc6c59eb72d81d335e2a2e27
+ O Gui sempre gerará a mesma chave para um documento, salvo se houver alguma alteração no documento.
+
+
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+
+ 3.2 - OBJETOS FUNDAMENTAIS (Blobs, Trees, Commits)
+ Tree armazenam bloobs.
+ Bloob armazenam o sha1.
+ 
+
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+
+ 3.3 - CHAVES SSH E TOKEN
+  ssh-keygen -t ed25519 -C haroldoferreira.csf@gmail.com
+  Generating public/private ed25519 key pair.
+  Enter file in which to save the key (/c/Users/guilh/.ssh/id_ed25519):
+
+  Chave: :6Ip38gVcI9zJCjTu8gidZcGaIb8JpQ32qy5mugcum14 haroldoferreira.csf@gmail.com
+$ ssh-keygen -t ed25519 -C haroldoferreira.csf@gmail.com
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/guilh/.ssh/id_ed25519):
+/c/Users/guilh/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Passphrases do not match.  Try again.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/guilh/.ssh/id_ed25519
+Your public key has been saved in /c/Users/guilh/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:4sZUIBQaeIF1Px2sAj8lMpDJ+ddeHM/TKXuvTNiehJ0 haroldoferreira.csf@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|oB=o=....        |
+|=o=+.o.o.o       |
+| .o= o+.+ + . .  |
+|   .+..+ o = o   |
+|    .o+ S   +    |
+|     + o   .=..  |
+|      +    o.E.  |
+|     .      = .. |
+|             =.  |
++----[SHA256]-----+
+
+
+ Localizar a pasta
+ cd /c/Users/guilh/.ssh/
+ Enter
+ ls
+ Enter
+ cat id_ed25519.pub
+ Enter
+ Chave: AAAAC3NzaC1lZDI1NTE5AAAAINH5mS5ZAyTUubgZzOL9MV162+74Z9R/BwgrSZLtViWD haroldoferreira.csf@gmail.com
+
+TOKEN GUITHUB 
+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
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKwMfVj3rQEWIz1rNJp+y8nO8bd1Sguu0wA01hGMU8zV haroldoferreira.csf@gmail.com
+
+
+$ eval $(ssh-agent -s)
+Agent pid 259
+
+
+
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+Criar um Commit
+
+cd workspace
+Enter
+
+livro-receitas
+Enter
+
+ = Pasta criada dentro da workspace
+
+Usar o guit init:
+cd livro-receitas
+Enter
+
+git init + Enter
+
+O git diz que existe a pasta ".git" porém, esta está oculta.
+Para verificar essa pasta oculta, no git, faça o comando "ls -a"
+
+Para abrir a pasta .git:
+ cd .git
+ ls (mostrará tudo o que contém nessa pasta)
+
+
+Criar arquivo dentro da pasta livro-receitas:
+1-Criar uma configuração inicial
+$ git config --global user.email "haroldoferreira.csf@gmail.com"
+
+$ git config --global user.name haroldof001
+
+git add *
+
+git commit -m "commit inicial"
+
+
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+TOKEN DE ACESSO GITHUB: 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
+
+
+
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+SERVIDOR - Remote Repository
+AMBIENTE DE DESENVOLVIMENTO - Working Directory / Staging Area / Local Repository
+
+GIT STATUS - Vai mostrar uma atualização do arquivo
+
+
+
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$ mkdir receitas
+
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$ ls
+receitas/  strogonoff.md
+
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$ mv strogonoff.md ./receitas/
+
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$
+
+
+
+
+
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    strogonoff.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        receitas/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$ git add strogonoff.md receitas/
+
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    strogonoff.md -> receitas/strogonoff.md
+
+MOVER ARQUIVO PARA PASTA
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$ git commit -m "cria pasta receitas, move arquivo para receitas"
+[master b78979b] cria pasta receitas, move arquivo para receitas
+ 1 file changed, 5 insertions(+)
+ rename strogonoff.md => receitas/strogonoff.md (62%)
+
+
+
+Para ver as configurações da sua conta no GitHub:
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.email=haroldoferreira.csf@gmail.com
+user.name=haroldof001
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+
+PARA ALTERAR OU RETIRAR O USERNAME:
+git config --global --unset user.email
+git config --global --unset user.name
+
+PARA ADICIONAR E-MAIL e USER NAME:
+git config --global user.email "e-mail escolhido"
+git config --global user.name "Nome de usuário escolhido"
+
+
+PASSOS PARA PASSAR UM REPOSITÓRIO LOCAL PARA UM REMOTO:
+$ git remote add origin https://github.com/haroldof001/livro-receitas.git
+
+guilh@LAPTOP-2TTSK3B8 MINGW64 /c/workspace/livro-receitas (master)
+$ git push origin master
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (13/13), 1.19 KiB | 152.00 KiB/s, done.
+Total 13 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/haroldof001/livro-receitas.git
+ * [new branch]      master -> master
+
+
+
+
+BAIXAR REPOSITÓRIO DO SITE DA GITHUB
+Code >>> Copia o link(para clonar o repositório) >>> (No Git Bash): git clone (link) enter
+
+=============================================================================================================
+
+1. O que o comando git clone faz? OK
+Faz clone do repositório ....
+
+2. O que é um sistema distribuído? OK
+Um sistema que possui múltiplas cópias ...
+
+3. O que é um arquivo tipo Markdown? OK
+Um arquivo que usa caracteres especiais, como #, para formatar um texto.
+
+4. Quando você tenta empurrar (push) o código para o GitHub e o seu commit 
+não representa o estado mais atual do repositório o git irá:
+Pedir para você fazer um pull, e, depois, um push.
+
+5. O que acontece quando você gera commits no seu repositório local com email 
+e nickname diferentes dos utilizados no GitHub? OK
+Os commits apareceram com e-mail e name diferentes do GitHub.
+
+6. Qual o comando usado para inicializar o GIT dentro de uma pasta?
+git init
+
+7. Aprendemos que alguns comandos podem variar de acordo com o sistema operacional usado. 
+Com isso em mente, o que o comando dir, no Windows e ls, no Linux fazem?
+Retorna uma lista com o conteúdo contido naquele diretório específico.
+
+8. O que o GIT é?
+Um sistema de versionamento de código distribuído.
+
+9. Qual a diferença do seu ambiente de desenvolvimento e do servidor?
+Seu ambiente de desenvolvimento é local, e o servidor, remoto.
+
+10. O que o comando Git init faz?
+Inicia um repositório git na pasta em questão.
+
+
+############################################################################################################
+
+
