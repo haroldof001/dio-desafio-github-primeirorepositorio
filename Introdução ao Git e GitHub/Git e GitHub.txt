@@ -1,3 +1,10 @@
+Link de Download: (https://git-scm.com)
+
+O GitBash é um terminal estendido para otimizar o uso do Git.
+
+
+
+
  2 - NAVEGAÇÃO VIA COMMAND LINE, INTERFACE E INSTALAÇÃO
 
  2.1 - NAVEGAÇÃO BÁSICA - COMANDOS BÁSICOS
@@ -290,6 +297,10 @@ To https://github.com/haroldof001/livro-receitas.git
  * [new branch]      master -> master
 
 
+Adicionando o documento no controle de versão local:
+git add .	
+
+
 
 
 BAIXAR REPOSITÓRIO DO SITE DA GITHUB
@@ -333,4 +344,6 @@ Inicia um repositório git na pasta em questão.
 
 ############################################################################################################
 
+
+Relembrando algumas coisas
 
